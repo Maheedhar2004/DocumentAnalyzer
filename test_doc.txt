@@ -1,0 +1,15 @@
+ACME Corporation Operations Manual
+
+Introduction:
+ACME Corporation is a global leader in the design, development, and manufacturing of innovative widgets and consumer electronics. Founded in 1999, the company operates across 14 countries and maintains over 5,000 employees worldwide. This document details our operational protocols, standards for quality assurance, and customer service frameworks.
+
+Product Specifications:
+Our primary product line, the ACME SuperWidget, runs on a dual-core proprietary microchip operating at 2.4 GHz. It features a rechargeable lithium-ion battery with a continuous runtime of 18 hours. The casing is made of high-durability recycled polycarbonate, resistant to drops up to 2 meters.
+
+Operational Guidelines:
+1. All technicians must undergo a bi-annual safety training program.
+2. The assembly line operates on a three-shift rotation model: Shift A (06:00 - 14:00), Shift B (14:00 - 22:00), and Shift C (22:00 - 06:00).
+3. Product testing involves a rigorous stress cycle where each unit is subjected to extreme temperatures (-10C to +50C) for a duration of 45 minutes.
+
+Customer Support & Warranty:
+Every ACME SuperWidget is covered under our 2-Year Platinum Warranty. Customers seeking repairs or replacements must submit a ticket via our portal. Returns are processed within 5 business days, and replacements are shipped via priority courier.

@@ -1,0 +1,35 @@
+This is a sample document for testing the DocuMind AI assistant.
+It contains information about how AI systems process documents.
+AI systems parse PDF, DOCX, and TXT files.
+They extract the text contents, generate summaries, and extract key entities.
+Then, users can interact with the document in a chat interface or translate it into multiple languages.
+This is page 1, paragraph 1 of the testing document.
+This is paragraph 2 of the testing document.
+This is paragraph 3 of the testing document.
+This is paragraph 4 of the testing document.
+This is paragraph 5 of the testing document.
+This is paragraph 6 of the testing document.
+This is paragraph 7 of the testing document.
+This is paragraph 8 of the testing document.
+This is paragraph 9 of the testing document.
+This is paragraph 10 of the testing document.
+This is paragraph 11 of the testing document.
+This is paragraph 12 of the testing document.
+This is paragraph 13 of the testing document.
+This is paragraph 14 of the testing document.
+This is paragraph 15 of the testing document.
+This is paragraph 16 of the testing document.
+This is paragraph 17 of the testing document.
+This is paragraph 18 of the testing document.
+This is paragraph 19 of the testing document.
+This is paragraph 20 of the testing document.
+This is paragraph 21 of the testing document.
+This is paragraph 22 of the testing document.
+This is paragraph 23 of the testing document.
+This is paragraph 24 of the testing document.
+This is paragraph 25 of the testing document.
+This is paragraph 26 of the testing document.
+This is paragraph 27 of the testing document.
+This is paragraph 28 of the testing document.
+This is paragraph 29 of the testing document.
+This is paragraph 30 of the testing document.
