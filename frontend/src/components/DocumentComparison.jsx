@@ -53,7 +53,7 @@ const DocumentComparison = ({ doc1, doc2, onBack }) => {
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between border-b border-slate-800/80 pb-4">
         <button 
           onClick={onBack}
           className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors"
@@ -61,7 +61,7 @@ const DocumentComparison = ({ doc1, doc2, onBack }) => {
           <ArrowLeft className="w-4 h-4" />
           Back to Documents
         </button>
-        <span className="text-[10px] uppercase font-bold px-3 py-1 bg-brand-500/10 border border-brand-500/30 text-brand-400 rounded-full">
+        <span className="text-[10px] uppercase font-bold px-3 py-1 bg-brand-500/10 border border-brand-500/30 text-brand-400 rounded-full w-full sm:w-auto text-center">
           Deep comparison engine active
         </span>
       </div>

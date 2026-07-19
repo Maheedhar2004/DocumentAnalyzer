@@ -126,7 +126,7 @@ const DocumentDetails = ({ documentId, onBack, onUpgradeRequired }) => {
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
       {/* Detail Header */}
-      <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between border-b border-slate-800/80 pb-4">
         <button 
           onClick={onBack}
           className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors"
@@ -136,7 +136,7 @@ const DocumentDetails = ({ documentId, onBack, onUpgradeRequired }) => {
         </button>
         <button 
           onClick={handleDownloadSummary}
-          className="flex items-center gap-1.5 px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850 rounded-xl text-xs font-semibold transition-all"
+          className="flex items-center gap-1.5 px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-850 rounded-xl text-xs font-semibold transition-all w-full sm:w-auto justify-center"
         >
           <Download className="w-3.5 h-3.5" />
           Download Summary

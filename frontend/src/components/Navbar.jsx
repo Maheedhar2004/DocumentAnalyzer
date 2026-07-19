@@ -25,39 +25,39 @@ const Navbar = ({ onBackToDocs, onShowAuth }) => {
   };
 
   return (
-    <header className="glass sticky top-0 z-50 w-full px-6 py-4 flex items-center justify-between border-b border-slate-800">
+    <header className="glass sticky top-0 z-50 w-full px-4 md:px-6 py-3 md:py-4 flex items-center justify-between border-b border-slate-800">
       {/* Brand */}
       <div
-        className="flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity"
+        className="flex items-center gap-2 sm:gap-3 cursor-pointer hover:opacity-90 transition-opacity"
         onClick={onBackToDocs}
       >
-        <div className="bg-brand-600/20 p-2 rounded-xl border border-brand-500/30 flex items-center justify-center">
-          <FileText className="w-6 h-6 text-brand-400" />
+        <div className="bg-brand-600/20 p-1.5 sm:p-2 rounded-xl border border-brand-500/30 flex items-center justify-center">
+          <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-brand-400" />
         </div>
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-white m-0 p-0 text-left leading-tight">
-            DocuMind <span className="text-brand-400 font-medium text-sm">AI</span>
+          <h1 className="text-lg sm:text-xl font-bold tracking-tight text-white m-0 p-0 text-left leading-tight">
+            DocuMind <span className="text-brand-400 font-medium text-xs sm:text-sm">AI</span>
           </h1>
-          <p className="text-xs text-slate-400 font-light">Interactive Document Assistant</p>
+          <p className="text-[10px] text-slate-400 font-light hidden sm:block">Interactive Document Assistant</p>
         </div>
       </div>
 
       {/* Right side */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5 sm:gap-2">
         {isAuthenticated ? (
           /* ── Logged in: avatar dropdown ── */
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 transition-all"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 transition-all"
             >
-              <div className="w-7 h-7 rounded-lg bg-brand-600/20 border border-brand-500/30 flex items-center justify-center">
-                <User className="w-4 h-4 text-brand-400" />
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-brand-600/20 border border-brand-500/30 flex items-center justify-center">
+                <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-400" />
               </div>
-              <span className="text-sm font-medium text-slate-200 max-w-[120px] truncate">
+              <span className="text-xs sm:text-sm font-medium text-slate-200 max-w-[80px] sm:max-w-[120px] truncate">
                 {user?.username}
               </span>
-              <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {/* Dropdown */}
@@ -85,16 +85,16 @@ const Navbar = ({ onBackToDocs, onShowAuth }) => {
           <>
             <button
               onClick={() => onShowAuth?.('login')}
-              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 rounded-xl bg-slate-900/40 hover:bg-slate-900/70 transition-all"
+              className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 rounded-xl bg-slate-900/40 hover:bg-slate-900/70 transition-all"
             >
-              <LogIn className="w-3.5 h-3.5" />
+              <LogIn className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               Sign In
             </button>
             <button
               onClick={() => onShowAuth?.('signup')}
-              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 rounded-xl shadow-md shadow-brand-900/20 transition-all"
+              className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 rounded-xl shadow-md shadow-brand-900/20 transition-all"
             >
-              <UserPlus className="w-3.5 h-3.5" />
+              <UserPlus className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               Sign Up
             </button>
           </>

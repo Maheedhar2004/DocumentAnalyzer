@@ -111,7 +111,7 @@ function AppInner() {
       />
 
       {/* ── Main Content ──────────────────────────────────── */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-6 py-8">
+      <main className="flex-1 w-full max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
         <div className="space-y-8 animate-in fade-in duration-200">
 
           {/* ── List View ────────────────────────────────── */}

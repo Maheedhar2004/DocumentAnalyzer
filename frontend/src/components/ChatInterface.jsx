@@ -211,6 +211,7 @@ const ChatInterface = ({ document, onBack, onUpgradeRequired }) => {
   const [isTypingStopped, setIsTypingStopped] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [guestCount, setGuestCount] = useState(guestService.getMessageCount());
+  const [mobileActiveView, setMobileActiveView] = useState('chat'); // 'sidebar' | 'chat'
   const messagesEndRef = useRef(null);
   const abortControllerRef = useRef(null);
 
@@ -289,6 +290,7 @@ const ChatInterface = ({ document, onBack, onUpgradeRequired }) => {
       const newSession = await chatService.createSession(document.id, title);
       setSessions((prev) => [newSession, ...prev]);
       setActiveSession(newSession);
+      setMobileActiveView('chat');
     } catch (err) {
       console.error('Failed to create chat session:', err);
     }
@@ -401,10 +403,12 @@ const ChatInterface = ({ document, onBack, onUpgradeRequired }) => {
   const isInputDisabled = !activeSession || sending || (isGuest && guestService.hasReachedLimit());
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 h-[calc(100vh-120px)] min-h-[500px]">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 h-[calc(100vh-120px)] min-h-[500px]">
 
       {/* ── Sidebar ──────────────────────────────────────── */}
-      <div className="lg:col-span-1 glass rounded-2xl border border-slate-800 flex flex-col overflow-hidden">
+      <div className={`lg:col-span-1 glass rounded-2xl border border-slate-800 flex flex-col overflow-hidden ${
+        mobileActiveView === 'sidebar' ? 'block' : 'hidden lg:flex'
+      }`}>
         <div className="flex-1 overflow-hidden flex flex-col">
           {/* Header */}
           <div className="p-4 border-b border-slate-800 flex items-center justify-between">
@@ -477,7 +481,10 @@ const ChatInterface = ({ document, onBack, onUpgradeRequired }) => {
                     key={sess.id}
                     session={sess}
                     isActive={activeSession?.id === sess.id}
-                    onClick={() => setActiveSession(sess)}
+                    onClick={() => {
+                      setActiveSession(sess);
+                      setMobileActiveView('chat');
+                    }}
                     onRename={handleRenameSession}
                     onDelete={handleDeleteSession}
                   />
@@ -497,17 +504,30 @@ const ChatInterface = ({ document, onBack, onUpgradeRequired }) => {
       </div>
 
       {/* ── Main Chat Pane ────────────────────────────────── */}
-      <div className="lg:col-span-3 glass rounded-2xl border border-slate-800 flex flex-col overflow-hidden">
+      <div className={`lg:col-span-3 glass rounded-2xl border border-slate-800 flex flex-col overflow-hidden ${
+        mobileActiveView === 'chat' ? 'flex' : 'hidden lg:flex'
+      }`}>
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/20 flex-shrink-0">
-          <div>
-            <h3 className="text-sm font-semibold text-white">
-              {activeSession ? activeSession.title : 'No Thread Selected'}
-            </h3>
-            <p className="text-[11px] text-brand-400 flex items-center gap-1 font-medium mt-0.5">
-              <Sparkles className="w-3.5 h-3.5" />
-              llama-3.3-70b active
-            </p>
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/20 flex-shrink-0">
+          <div className="flex items-center gap-3">
+            {/* Mobile back to threads list button */}
+            <button
+              type="button"
+              onClick={() => setMobileActiveView('sidebar')}
+              className="lg:hidden p-1.5 -ml-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition-colors"
+              title="View Threads"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <div>
+              <h3 className="text-sm font-semibold text-white">
+                {activeSession ? activeSession.title : 'No Thread Selected'}
+              </h3>
+              <p className="text-[11px] text-brand-400 flex items-center gap-1 font-medium mt-0.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                llama-3.3-70b active
+              </p>
+            </div>
           </div>
         </div>
 
