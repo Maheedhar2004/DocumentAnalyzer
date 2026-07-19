@@ -45,6 +45,18 @@ def get_current_user(request):
     if request.user and request.user.is_authenticated:
         return request.user, False, None
 
+    # Check for token in query parameter (useful for window.open / download-summary link)
+    token = request.query_params.get('token') if hasattr(request, 'query_params') else request.GET.get('token')
+    if token:
+        try:
+            from rest_framework_simplejwt.authentication import JWTAuthentication
+            validated_token = JWTAuthentication().get_validated_token(token)
+            user = JWTAuthentication().get_user(validated_token)
+            if user and user.is_active:
+                return user, False, None
+        except Exception:
+            pass
+
     # Guest flow: read/create a guest session from header/cookie
     guest_key = request.headers.get('X-Guest-Session') or request.COOKIES.get('guest_session_key')
     if guest_key:

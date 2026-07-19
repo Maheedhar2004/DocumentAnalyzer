@@ -72,7 +72,7 @@ const DocumentDetails = ({ documentId, onBack, onUpgradeRequired }) => {
       onUpgradeRequired?.('Downloading summaries is a premium feature. Sign up to save reports offline!');
       return;
     }
-    window.open(`http://127.0.0.1:8000/api/documents/${document.id}/download-summary/`, '_blank');
+    window.open(documentService.getDownloadSummaryUrl(document.id), '_blank');
   };
 
   if (loading) {
