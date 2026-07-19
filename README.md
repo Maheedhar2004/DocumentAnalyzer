@@ -128,7 +128,7 @@ python manage.py migrate
 python manage.py runserver 8000
 ```
 
-The Django API will be available at **`http://localhost:8000`**.
+The Django API will be available at **`https://documentanalyzer-tgso.onrender.com`**.
 
 ---
 
@@ -378,8 +378,10 @@ Configured in `document_assistant/settings.py` for the Vite dev origin:
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://documentanalyzer-frontend-78atyxyt6-mr2004.vercel.app/"
 ]
 ```
+
 
 ---
 
