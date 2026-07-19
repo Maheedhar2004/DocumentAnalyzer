@@ -120,10 +120,13 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://documentanalyzer-frontend.vercel.app',
     'https://documentanalyzer-frontend-78atyxyt6-mr2004.vercel.app',
     'http://localhost:5173',
     'http://127.0.0.1:5173',
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # DRF settings
 REST_FRAMEWORK = {
