@@ -119,6 +119,12 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-guest-session',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://documentanalyzer-frontend-78atyxyt6-mr2004.vercel.app',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+]
+
 # DRF settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
